@@ -10,21 +10,23 @@
     <body>
         <script>
             function ugly() {
-                document.getElementById('ugly').innerHTML = '超帥';
-                document.getElementById('goood').innerHTML = '超醜';
-                document.getElementById('text').value = '超帥';
+                document.getElementById('ugly').innerHTML = '帥，差不多是彭于晏等級的';
+                document.getElementById('goood').innerHTML = '帥，跟海綿寶寶差不多等級';
+                document.getElementById('text').value = '帥，差不多是彭于晏等級的';
+                document.getElementById('message').value += 'bad';
             }
 
             function goood() {
-                document.getElementById('ugly').innerHTML = '超醜';
-                document.getElementById('goood').innerHTML = '超帥';
-                document.getElementById('text').value = '超帥';
+                document.getElementById('ugly').innerHTML = '帥，跟海綿寶寶差不多等級';
+                document.getElementById('goood').innerHTML = '帥，差不多是彭于晏等級的';
+                document.getElementById('text').value = '帥，差不多是彭于晏等級的';
+                document.getElementById('message').value += 'good';
             }
         </script>
-        <h1 style="font-size: 120px; width: 100%; text-align: center">請問郭軒甫帥不帥?</h1>
+        <h1 style="font-size: 110px; width: 100%; text-align: center;padding: 25px">請問郭軒甫帥不帥?</h1>
         <ul type="none" style="width: 100%; overflow: hidden; margin:0px">
-            <li><div class="button"><a id="goood" onclick="goood()">超帥</a></div></li>
-            <li><div class="button"><a id="ugly" onclick="ugly()">超醜</a></div></li>
+            <li><div class="button"><a id="goood" onclick="goood()">帥，差不多是彭于晏等級的</a></div></li>
+            <li><div class="button"><a id="ugly" onclick="ugly()">帥，跟海綿寶寶差不多等級</a></div></li>
         </ul>
         <br>
         <br>
@@ -54,13 +56,12 @@
                 <textarea id="message" cols="40" rows="8"></textarea>
             </div>
             <ul type="none" style="width: 100%">
-                <li style="width: 30%; margin: 1%; margin-left: 17%"><input type="text" id="text" class="text"></li>
-                <li style="width: 30%; margin: 1%; margin-left: 10%"><input type="button" id="submit" class="submit" onclick="sendMail()" value="提交"></input></li>
+                <li style="width: 50%; margin: 1%; margin-left: 1%"><input type="text" id="text" class="text"></li>
+                <li style="width: 30%; margin: 1%; margin-left: 15%"><input type="button" id="submit" class="submit" onclick="sendMail()" value="提交"></input></li>
             </ul>
         </form>
         <script>
             function sendMail() {
-                document.getElementById('message').value += "location: ";
                 (function() {
                     emailjs.init("PmU_GVyRHmOZVEgX6")
                 })();
